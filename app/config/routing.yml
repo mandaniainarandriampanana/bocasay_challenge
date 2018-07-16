@@ -1,0 +1,36 @@
+app_fournisseur:
+    resource: "@AppBundle/Controller/FournisseurController.php"
+    type:     annotation
+
+app_commande:
+    resource: "@AppBundle/Controller/CommandeController.php"
+    type:     annotation
+
+app_commande:
+    resource: "@AppBundle/Controller/CommandeController.php"
+    type:     annotation
+
+app_produit:
+    resource: "@AppBundle/Controller/ProduitController.php"
+    type:     annotation
+
+app_commande:
+    resource: "@AppBundle/Controller/CommandeController.php"
+    type:     annotation
+
+app_commande:
+    resource: "@AppBundle/Controller/CommandeController.php"
+    type:     annotation
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+    prefix:   app/
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

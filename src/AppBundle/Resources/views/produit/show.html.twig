@@ -1,0 +1,59 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block blanc %}Produit{% endblock %}
+{% block underblanc %}
+<div class="panel-body">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ produit.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ produit.description }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ produit.stock }}</td>
+            </tr>
+            <tr>
+                <th>Prixttc</th>
+                <td>{{ produit.prixTtc }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ produit.getGenre.getLibelle }}</td>
+            </tr>
+            <tr>
+                <th>Types</th>
+                <td>{{ produit.getTypes.getLibelle }}</td>
+            </tr>
+            <tr>
+                <th>Fournisseur</th>
+                <td>{{ produit.getFournisseur.getMarque }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+    <ul>
+        <li>
+            <a href="{{ path('produit_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('produit_edit', { 'id': produit.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% trans_default_domain "FOSUserBundle" %}
+{% block other_head %}
+    
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div role="form">
+                                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                                    
+                                        {{ form_row(form.email, { 'attr': {'class': 'form-control'} }) }}
+                                        
+                                        {{ form_row(form.username, { 'attr': {'class': 'form-control'} }) }}
+                                        
+                                        {{ form_row(form.userFamillyName, { 'attr': {'class': 'form-control'} }) }}
+                                    
+                                        {{ form_row(form.plainPassword.first, { 'attr': {'class': 'form-control'} }) }}
+                                    
+                                        {{ form_row(form.plainPassword.second, { 'attr': {'class': 'form-control'} }) }}
+                                    </div>
+                                    </br>
+                                    <div>
+                                        <input class="btn btn-default" type="submit" value="{{ 'registration.submit'|trans }}" />
+                                    </div>
+                                {{ form_end(form) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

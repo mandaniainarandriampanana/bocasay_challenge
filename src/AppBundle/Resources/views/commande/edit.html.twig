@@ -1,0 +1,29 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block blanc %}Editer Commande{% endblock %}
+{% block underblanc %}
+
+    {{ form_start(edit_form) }}
+    <div>
+        <span>{{error}}</span>
+    </div>
+        {% for produit in edit_form.produit %}
+            <div class="form-group">
+                <span class="col-lg-6">{{ form_label(produit) }}</span>
+                    {{ form_widget(produit) }}</br>
+            </div>
+        {% endfor %}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('commande_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

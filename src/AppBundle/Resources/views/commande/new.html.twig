@@ -1,0 +1,35 @@
+{% extends 'base_admin.html.twig' %}
+{% trans_default_domain "FOSUserBundle" %}
+
+{% block blanc %}Création Commande{% endblock %}
+{% block underblanc %}
+<div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div role="form">
+                            {{ form_start(form) }}
+                            <div>
+                                <span>{{error}}</span>
+                            </div>
+                                {% for produit in form.produit %}
+                                    <div class="form-group">
+                                        <span class="col-lg-6">{{ form_label(produit) }}</span>
+                                        {{ form_widget(produit) }}</br>
+                                    </div>
+                                {% endfor %}
+                                <div>
+                                    <input class="btn btn-default" type="submit" value="{{ 'object.create'|trans }}" />
+                                </div>
+                            {{ form_end(form) }}
+                            </div>
+                                <a href="{{ path('commande_index') }}">Back to the list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+{% endblock %}
